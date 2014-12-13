@@ -1,10 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
 PRODUCT_PACKAGES += \
-    wfd \
     libapedec \
-    libhevcdec \
-    libjesancache \
     libOMX_Core \
     libomxvpu_dec \
     libomxvpu_enc \
@@ -12,10 +9,17 @@ PRODUCT_PACKAGES += \
     librk_demux \
     librk_hevcdec \
     libRkOMX_Resourcemanager \
-    librkswscale \
     librk_vpuapi \
-    librkwmapro \
     libstagefrighthw
+
+ifeq ($(filter sofia%, $(TARGET_BOARD_PLATFORM)), )
+PRODUCT_PACKAGES += \
+    libhevcdec \
+    librkwmapro \
+    librkswscale \
+    libjesancache \
+    wfd 
+endif
 
 ifeq ($(filter rk2928, $(TARGET_BOARD_PLATFORM)), )
 PRODUCT_PACKAGES += \
@@ -23,6 +27,10 @@ PRODUCT_PACKAGES += \
     libjpeghwenc
 endif
 
+ifneq ($(filter rk%, $(TARGET_BOARD_PLATFORM)), )
 PRODUCT_COPY_FILES += \
     vendor/rockchip/common/vpu/etc/media_codecs.xml:system/etc/media_codecs.xml
-
+else
+PRODUCT_COPY_FILES += \
+	vendor/rockchip/common/vpu/etc/media_codecs_sofia.xml:system/etc/media_codecs.xml
+endif
