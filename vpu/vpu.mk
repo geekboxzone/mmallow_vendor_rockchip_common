@@ -2,25 +2,25 @@ LOCAL_PATH := $(call my-dir)
 
 PRODUCT_PACKAGES += \
     wfd \
-    libapedec.so \
-    libhevcdec.so \
-    libjesancache.so \
-    libOMX_Core.so \
-    libomxvpu_dec.so \
-    libomxvpu_enc.so \
-    librk_audio.so \
-    librk_demux.so \
-    librk_hevcdec.so \
-    libRkOMX_Resourcemanager.so \
-    librkswscale.so \
-    librk_vpuapi.so \
-    librkwmapro.so \
-    libstagefrighthw.so
+    libapedec \
+    libhevcdec \
+    libjesancache \
+    libOMX_Core \
+    libomxvpu_dec \
+    libomxvpu_enc \
+    librk_audio \
+    librk_demux \
+    librk_hevcdec \
+    libRkOMX_Resourcemanager \
+    librkswscale \
+    librk_vpuapi \
+    librkwmapro \
+    libstagefrighthw
 
 ifeq ($(filter rk2928, $(TARGET_BOARD_PLATFORM)), )
 PRODUCT_PACKAGES += \
-    libjpeghwdec.so \
-    libjpeghwenc.so
+    libjpeghwdec \
+    libjpeghwenc
 endif
 
 PRODUCT_COPY_FILES += \
