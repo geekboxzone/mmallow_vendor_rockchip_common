@@ -14,7 +14,10 @@
 # limitations under the License.
 #
 
+ifeq ($(PRODUCT_HAVE_RKAPPS), true)
 $(call inherit-product-if-exists, vendor/rockchip/common/apps/apps.mk)
+endif
+
 ifeq ($(strip $(TARGET_BOARD_PLATFORM_GPU)), PVR540)
 $(call inherit-product-if-exists, vendor/rockchip/common/gpu/PVR540.mk)
 endif
@@ -24,21 +27,53 @@ endif
 ifeq ($(strip $(TARGET_BOARD_PLATFORM_GPU)), Mali-T760)
 $(call inherit-product-if-exists, vendor/rockchip/common/gpu/MaliT760.mk)
 endif
+
+ifeq ($(PRODUCT_HAVE_IPP), true)
 $(call inherit-product-if-exists, vendor/rockchip/common/ipp/ipp.mk)
+endif
+
+ifeq ($(PRODUCT_HAVE_RKVPU), true)
 $(call inherit-product-if-exists, vendor/rockchip/common/vpu/vpu.mk)
+endif
+
+ifeq ($(PRODUCT_HAVE_NAND), true)
 $(call inherit-product-if-exists, vendor/rockchip/common/nand/nand.mk)
+endif
+
+ifeq ($(PRODUCT_HAVE_RKWIFI), true)
 $(call inherit-product-if-exists, vendor/rockchip/common/wifi/wifi.mk)
+endif
+
+ifeq ($(PRODUCT_HAVE_RKTOOLS), true)
 $(call inherit-product-if-exists, vendor/rockchip/common/bin/bin.mk)
+endif
+
+ifeq ($(PRODUCT_HAVE_WEBKIT_DEBUG), true)
 $(call inherit-product-if-exists, vendor/rockchip/common/webkit/webkit.mk)
+endif
+
 ifeq ($(strip $(BOARD_HAVE_BLUETOOTH)),true)
 $(call inherit-product-if-exists, vendor/rockchip/common/bluetooth/bluetooth.mk)
 endif
+
+ifeq ($(PRODUCT_HAVE_GPS), true)
 $(call inherit-product-if-exists, vendor/rockchip/common/gps/gps.mk)
+endif
+
+ifeq ($(PRODUCT_HAVE_ADBLOCK), true)
 $(call inherit-product-if-exists, vendor/rockchip/common/etc/adblock.mk)
+endif
+
 # uncomment the line bellow to enable phone functions
+ifeq ($(PRODUCT_HAVE_RKPHONE_FEATURES), true)
 #$(call inherit-product-if-exists, vendor/rockchip/common/phone/phone.mk)
-ifeq ($(strip $(BUILD_WITH_RK_EBOOK)),true)
+endif
+
+ifeq ($(PRODUCT_HAVE_RKEBOOK)),true)
 $(call inherit-product-if-exists, vendor/rockchip/common/app/rkbook.mk)
 endif
+
 # for data clone
+ifeq ($(PRODUCT_HAVE_DATACLONE)),true)
 $(call inherit-product-if-exists, vendor/rockchip/common/data_clone/packdata.mk)
+endif

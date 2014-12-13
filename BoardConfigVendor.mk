@@ -13,3 +13,26 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+# For rockchip rk3036 rk312x rk3288 rk3368 platforms
+ifneq ($(filter rk%, $(strip $(TARGET_BOARD_PLATFORM))), )
+
+PRODUCT_HAVE_IPP ?= true
+PRODUCT_HAVE_RKVPU ?= true
+PRODUCT_HAVE_NAND ?= true
+PRODUCT_HAVE_RKWIFI ?= true
+PRODUCT_HAVE_GPS ?= true
+PRODUCT_HAVE_RKPHONE_FEATURES ?= true
+PRODUCT_HAVE_RKAPPS ?= true
+PRODUCT_HAVE_RKEBOOK ?= false
+PRODUCT_HAVE_DATACLONE ?= false
+PRODUCT_HAVE_ADBLOCK ?= true
+PRODUCT_HAVE_WEBKIT_DEBUG ?= false
+PRODUCT_HAVE_RKTOOLS ?= true
+
+else
+
+# For sofia platforms
+PRODUCT_HAVE_RKVPU ?= true
+
+endif
