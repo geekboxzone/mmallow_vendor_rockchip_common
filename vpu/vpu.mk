@@ -29,8 +29,8 @@ endif
 
 ifneq ($(filter rk%, $(TARGET_BOARD_PLATFORM)), )
 PRODUCT_COPY_FILES += \
-    vendor/rockchip/common/vpu/etc/media_codecs.xml:system/etc/media_codecs.xml
-    vendor/rockchip/common/vpu/etc/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml
+    vendor/rockchip/common/vpu/etc/media_codecs.xml:system/etc/media_codecs.xml \
+    vendor/rockchip/common/vpu/etc/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     vendor/rockchip/common/vpu/etc/media_codecs_rk_vpu.xml:system/etc/media_codecs_rk_vpu.xml
 else
 PRODUCT_COPY_FILES += \
