@@ -6,7 +6,6 @@ PRODUCT_PACKAGES += \
     RKUpdateService \
     RkExplorer      \
     RkUserExperienceService \
-    StressTest
 
 ifneq ($(strip $(TARGET_BOARD_PLATFORM)), rk312x)
 PRODUCT_PACKAGES += \
@@ -14,4 +13,9 @@ PRODUCT_PACKAGES += \
 else
 PRODUCT_PACKAGES += \
     RkVideoPlayer
+endif
+
+ifeq ($(strip $(BOARD_HAS_STRESSTEST_APP)), true)
+    PRODUCT_PACKAGES += \
+    StressTest
 endif
