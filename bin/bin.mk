@@ -6,3 +6,10 @@ PRODUCT_PACKAGES += \
     sdtool
 
 endif
+
+ifeq ($(strip $(TARGET_ARCH)), x86)
+
+PRODUCT_PACKAGES += \
+	busybox
+
+endif
