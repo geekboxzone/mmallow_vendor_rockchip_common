@@ -3,7 +3,7 @@
 # We only have arm version now
 ###############################################################################
 LOCAL_PATH := $(call my-dir)
-ifeq ($(strip $(TARGET_ARCH)), arm)
+#ifeq ($(strip $(TARGET_ARCH)), arm)
 
 ###############################################################################
 # busybox
@@ -37,4 +37,4 @@ LOCAL_MODULE_PATH := $(TARGET_ROOT_OUT_SBIN)
 LOCAL_SRC_FILES := $(TARGET_ARCH)/$(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
 
-endif
+#endif
