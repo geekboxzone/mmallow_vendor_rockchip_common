@@ -1,5 +1,5 @@
-ifeq ($(strip $(TARGET_BOARD_PLATFORM_GPU)), mali400)
-ifeq ($(strip $(TARGET_ARCH)), arm)
+ifeq ($(strip $(TARGET_BOARD_PLATFORM_GPU)), mali450)
+ifeq ($(strip $(TARGET_ARCH)), x86)
 PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcdc_composer=0
 PRODUCT_PROPERTY_OVERRIDES += debug.hwui.render_dirty_regions=false
 ifeq ($(strip $(GRAPHIC_MEMORY_PROVIDER)), dma_buf)
@@ -12,7 +12,7 @@ PRODUCT_COPY_FILES += \
     vendor/rockchip/common/gpu/gpu_performance/etc/performance_info.xml:system/etc/performance_info.xml \
     vendor/rockchip/common/gpu/gpu_performance/etc/packages-compat.xml:system/etc/packages-compat.xml \
     vendor/rockchip/common/gpu/gpu_performance/etc/packages-composer.xml:system/etc/packages-composer.xml \
-    vendor/rockchip/common/gpu/gpu_performance/bin/$(TARGET_ARCH)/performance:system/bin/performance \
+#    vendor/rockchip/common/gpu/gpu_performance/bin/$(TARGET_ARCH)/performance:system/bin/performance \
     vendor/rockchip/common/gpu/gpu_performance/lib/$(TARGET_ARCH)/libperformance_runtime.so:system/lib/libperformance_runtime.so \
     vendor/rockchip/common/gpu/gpu_performance/lib/$(TARGET_ARCH)/gpu.$(TARGET_BOARD_HARDWARE).so:system/lib/hw/gpu.$(TARGET_BOARD_HARDWARE).so
 
