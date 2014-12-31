@@ -78,7 +78,7 @@ Only the three quirks included above are recognized at this point:
 <MediaCodecs>
     <Include href="media_codecs_google_audio.xml" />
     <Decoders>
-	<MediaCodec name="OMX.rk.video_decoder.avc" type="video/avc" />
+    <MediaCodec name="OMX.rk.video_decoder.avc" type="video/avc" />
         <MediaCodec name="OMX.rk.video_decoder.m2v" type="video/mpeg2" /> 
         <MediaCodec name="OMX.rk.video_decoder.vp8" type="video/x-vnd.on2.vp8" /> 
         <MediaCodec name="OMX.google.vp9.decoder" type="video/x-vnd.on2.vp9" /> 
@@ -97,8 +97,9 @@ Only the three quirks included above are recognized at this point:
     <Encoders>
         <MediaCodec name="OMX.google.vp8.encoder" type="video/x-vnd.on2.vp8" />
         <MediaCodec name="OMX.rk.video_encoder.avc" type="video/avc" />
-	<MediaCodec name="OMX.google.h263.encoder" type="video/3gpp" />
-	<MediaCodec name="OMX.google.mpeg4.encoder" type="video/mp4v-es" />
+        <MediaCodec name="OMX.google.h263.encoder" type="video/3gpp" />
+        <MediaCodec name="OMX.google.mpeg4.encoder" type="video/mp4v-es" />
     </Encoders>
+    <Include href="media_codecs_google_video.xml" />
     <Include href="media_codecs_rk_vpu.xml" />
 </MediaCodecs>
