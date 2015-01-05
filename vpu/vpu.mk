@@ -9,8 +9,7 @@ PRODUCT_PACKAGES += \
     librk_demux \
     librk_hevcdec \
     libRkOMX_Resourcemanager \
-    librk_vpuapi \
-    libstagefrighthw
+    librk_vpuapi 
 
 ifeq ($(filter sofia%, $(TARGET_BOARD_PLATFORM)), )
 PRODUCT_PACKAGES += \
