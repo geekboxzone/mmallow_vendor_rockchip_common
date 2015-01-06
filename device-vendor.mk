@@ -30,6 +30,9 @@ endif
 ifeq ($(strip $(TARGET_BOARD_PLATFORM_GPU)), Mali-T760)
 $(call inherit-product-if-exists, vendor/rockchip/common/gpu/MaliT760.mk)
 endif
+ifeq ($(strip $(TARGET_BOARD_PLATFORM_GPU)), G6110)
+$(call inherit-product-if-exists, vendor/rockchip/common/gpu/G6110.mk)
+endif
 
 ifeq ($(PRODUCT_HAVE_IPP), true)
 $(call inherit-product-if-exists, vendor/rockchip/common/ipp/ipp.mk)
