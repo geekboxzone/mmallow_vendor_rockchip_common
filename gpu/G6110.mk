@@ -12,7 +12,7 @@ PRODUCT_COPY_FILES += \
     vendor/rockchip/common/gpu/libG6110/vendor/bin/pvrdebug:system/vendor/bin/pvrdebug \
     vendor/rockchip/common/gpu/libG6110/vendor/bin/pvrhwperf:system/vendor/bin/pvrhwperf \
     vendor/rockchip/common/gpu/libG6110/vendor/bin/pvrlogdump:system/vendor/bin/pvrlogdump \
-    vendor/rockchip/common/gpu/libG611/vendor/bin/pvrtld:system/vendor/bin/pvrtld \
+    vendor/rockchip/common/gpu/libG6110/vendor/bin/pvrtld:system/vendor/bin/pvrtld \
     vendor/rockchip/common/gpu/libG6110/vendor/bin/rgx_blit_test:system/vendor/bin/rgx_blit_test \
     vendor/rockchip/common/gpu/libG6110/vendor/bin/rgx_blitsize_test:system/vendor/bin/rgx_blitsize_test \
     vendor/rockchip/common/gpu/libG6110/vendor/bin/rgx_compute_test:system/vendor/bin/rgx_compute_test \
