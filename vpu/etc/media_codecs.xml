@@ -100,6 +100,6 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.google.h263.encoder" type="video/3gpp" />
         <MediaCodec name="OMX.google.mpeg4.encoder" type="video/mp4v-es" />
     </Encoders>
-    <Include href="media_codecs_google_video.xml" />
     <Include href="media_codecs_rk_vpu.xml" />
+    <Include href="media_codecs_google_video.xml" />
 </MediaCodecs>
