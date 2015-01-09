@@ -36,6 +36,14 @@ PRODUCT_COPY_FILES += \
 endif
 endif
 
+ifeq ($(strip $(BOARD_CONNECTIVITY_MODULE)), rtl8723bs_vq0)
+PRODUCT_COPY_FILES += \
+    vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723bs_vq0/rtl8723b_fw:system/etc/firmware/rtlbt/rtlbt_fw
+ODUCT_COPY_FILES += \
+    vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723bs_vq0/rtl8723b_VQ0_config:system/etc/firmware/rtlbt/rtlbt_config
+endif
+
+
 ifeq ($(strip $(BOARD_CONNECTIVITY_MODULE)), rtl8723au)
 PRODUCT_COPY_FILES += \
     vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723au/rtl8723a_fw:system/etc/firmware/rtl8723a_fw \
