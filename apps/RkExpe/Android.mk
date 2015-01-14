@@ -11,7 +11,7 @@ LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_CERTIFICATE := platform
 LOCAL_SRC_FILES := $(LOCAL_MODULE).apk
-LOCAL_REQUIRED_MODULES := userExperienceService.jar
+# LOCAL_REQUIRED_MODULES := userExperienceService.jar
 #LOCAL_PREBUILT_JNI_LIBS :=
 
 # 指定要将 enced_platform_keys 添加到 apk 中. 
