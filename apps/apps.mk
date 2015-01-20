@@ -17,5 +17,6 @@ endif
 
 ifeq ($(strip $(BOARD_HAS_STRESSTEST_APP)), true)
     PRODUCT_PACKAGES += \
-    StressTest
+    StressTest \
+    DeviceTest
 endif
