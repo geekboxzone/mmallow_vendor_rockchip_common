@@ -6,6 +6,7 @@ PRODUCT_PACKAGES += \
     RKUpdateService \
     RkExplorer      \
     RkUserExperienceService \
+    GoogleEmail
 
 ifneq ($(strip $(TARGET_BOARD_PLATFORM)), rk312x)
 PRODUCT_PACKAGES += \
