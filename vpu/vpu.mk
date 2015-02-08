@@ -18,6 +18,15 @@ PRODUCT_PACKAGES += \
     librkswscale \
     libjesancache \
     wfd 
+else
+PRODUCT_PACKAGES += \
+    libmdp_omx_core \
+    libstagefright_soft_aacdec_mdp \
+    libstagefright_soft_aacenc_mdp \
+    libstagefright_soft_amrdec_mdp \
+    libstagefright_soft_amrenc_mdp \
+    libstagefright_soft_mp3dec_mdp \
+    libstagefright_soft_vorbisdec_mdp
 endif
 
 ifeq ($(filter rk2928, $(TARGET_BOARD_PLATFORM)), )
