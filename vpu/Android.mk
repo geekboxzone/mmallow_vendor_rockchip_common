@@ -227,6 +227,8 @@ LOCAL_SRC_FILES := lib/$(TARGET_ARCH)/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
 endif
 include $(BUILD_PREBUILT)
 
+ifeq ($(strip USE_INTEL_MDP), true)
+
 include $(CLEAR_VARS)
 LOCAL_MODULE := libmdp_omx_core
 LOCAL_MODULE_TAGS := optional
@@ -332,3 +334,5 @@ LOCAL_SRC_FILES := lib/$(TARGET_ARCH)/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
 endif
 include $(BUILD_PREBUILT)
 
+
+endif

@@ -19,6 +19,7 @@ PRODUCT_PACKAGES += \
     libjesancache \
     wfd 
 else
+ifeq ($(strip USE_INTEL_MDP), true)
 PRODUCT_PACKAGES += \
     libmdp_omx_core \
     libstagefright_soft_aacdec_mdp \
@@ -27,6 +28,7 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_amrenc_mdp \
     libstagefright_soft_mp3dec_mdp \
     libstagefright_soft_vorbisdec_mdp
+endif
 endif
 
 ifeq ($(filter rk2928, $(TARGET_BOARD_PLATFORM)), )
