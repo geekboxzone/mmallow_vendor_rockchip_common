@@ -72,7 +72,7 @@ endif
 
 # uncomment the line bellow to enable phone functions
 ifeq ($(PRODUCT_HAVE_RKPHONE_FEATURES), true)
-#$(call inherit-product-if-exists, vendor/rockchip/common/phone/phone.mk)
+$(call inherit-product-if-exists, vendor/rockchip/common/phone/phone.mk)
 endif
 
 ifeq ($(PRODUCT_HAVE_RKEBOOK)),true)
