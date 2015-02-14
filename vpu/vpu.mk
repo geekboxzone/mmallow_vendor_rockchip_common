@@ -19,7 +19,7 @@ PRODUCT_PACKAGES += \
     libjesancache \
     wfd 
 else
-ifeq ($(strip USE_INTEL_MDP), true)
+ifeq ($(strip $(USE_INTEL_MDP)), true)
 PRODUCT_PACKAGES += \
     libmdp_omx_core \
     libstagefright_soft_aacdec_mdp \
