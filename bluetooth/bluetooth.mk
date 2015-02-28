@@ -19,46 +19,36 @@ PRODUCT_COPY_FILES += \
     vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723as/rtl8723a_config:system/etc/firmware/rtlbt/rtlbt_config
 endif
 
-ifeq ($(strip $(BOARD_CONNECTIVITY_MODULE)), rtl8723bs)
+#ifeq ($(strip $(BOARD_CONNECTIVITY_MODULE)), rtl8723bs)
 PRODUCT_COPY_FILES += \
-    vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723bs/rtl8723b_fw:system/etc/firmware/rtlbt/rtlbt_fw
+    vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723bs/rtl8723b_fw:system/etc/firmware/rtl8723bs_fw
+PRODUCT_COPY_FILES += \
+    vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723bs/rtl8723b_config:system/etc/firmware/rtl8723bs_config
+#endif
 
-#use external or internal 32k clock
-USE_EXT_32K_CLK := false
-ifeq ($(strip $(USE_EXT_32K_CLK)), true)
-# use external 32k clock    
+#ifeq ($(strip $(BOARD_CONNECTIVITY_MODULE)), rtl8723bs_vq0)
 PRODUCT_COPY_FILES += \
-    vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723bs/rtl8723b_config.external:system/etc/firmware/rtlbt/rtlbt_config
-else
-# use internal 32k clock  
-PRODUCT_COPY_FILES += \
-    vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723bs/rtl8723b_config.internal:system/etc/firmware/rtlbt/rtlbt_config
-endif
-endif
-
-ifeq ($(strip $(BOARD_CONNECTIVITY_MODULE)), rtl8723bs_vq0)
-PRODUCT_COPY_FILES += \
-    vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723bs_vq0/rtl8723b_fw:system/etc/firmware/rtlbt/rtlbt_fw
-ODUCT_COPY_FILES += \
-    vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723bs_vq0/rtl8723b_VQ0_config:system/etc/firmware/rtlbt/rtlbt_config
-endif
+    vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723bs_vq0/rtl8723b_fw:system/etc/firmware/rtl8723bs_VQ0_fw
+PODUCT_COPY_FILES += \
+    vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723bs_vq0/rtl8723b_VQ0_config:system/etc/firmware/rtl8723bs_VQ0_config
+#endif
 
 
-ifeq ($(strip $(BOARD_CONNECTIVITY_MODULE)), rtl8723au)
+#ifeq ($(strip $(BOARD_CONNECTIVITY_MODULE)), rtl8723au)
 PRODUCT_COPY_FILES += \
     vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723au/rtl8723a_fw:system/etc/firmware/rtl8723a_fw \
     vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723au/rtl8723a_config:system/etc/firmware/rtl8723a_config
-endif
+#endif
 
-ifeq ($(strip $(BOARD_CONNECTIVITY_MODULE)), rtl8723bu)
+#ifeq ($(strip $(BOARD_CONNECTIVITY_MODULE)), rtl8723bu)
 PRODUCT_COPY_FILES += \
     vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723bu/rtl8723b_fw:system/etc/firmware/rtl8723b_fw \
     vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723bu/rtl8723bu_config:system/etc/firmware/rtl8723bu_config
-endif
+#endif
 
 BT_FIRMWARE_FILES := $(shell ls $(CUR_PATH)/lib/firmware)
 PRODUCT_COPY_FILES += \
     $(foreach file, $(BT_FIRMWARE_FILES), $(CUR_PATH)/lib/firmware/$(file):system/vendor/firmware/$(file))
 
-include vendor/rockchip/common/bluetooth/console_start_bt/console_start_bt.mk
+#include vendor/rockchip/common/bluetooth/console_start_bt/console_start_bt.mk
 
