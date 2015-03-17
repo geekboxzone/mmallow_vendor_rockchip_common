@@ -86,8 +86,7 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.rk.video_decoder.flv1" type="video/flv"/>
         <MediaCodec name="OMX.rk.video_decoder.vp6" type="video/vp6"/>
         <MediaCodec name="OMX.rk.video_decoder.mjpeg" type="video/mjpeg"/>
-        <MediaCodec name="OMX.rk.video_decoder.hevc" type="video/hevc" />
-        
+        <MediaCodec name="OMX.rk.video_decoder.hevc" type="video/hevc" />        
         <MediaCodec name="RkVpuDecoder" type="video/avc" />
         <MediaCodec name="RkVpuDecoder" type="video/flv" />
         <MediaCodec name="RkVpuDecoder" type="video/mpeg2" />
@@ -97,6 +96,7 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="RkVpuDecoder" type="video/vp6" />
         <MediaCodec name="RkVpuDecoder" type="video/x-vnd.on2.vp8" />
         <MediaCodec name="RkVpuDecoder" type="video/hevc" />
+	<MediaCodec name="OMX.google.h264.decoder" type="video/avc" />
 
         <!-- intel audio -->
         <MediaCodec name="OMX.Intel.mp3.decoder" type="audio/mpeg" />
@@ -111,6 +111,8 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.google.vorbis.decoder" type="audio/vorbis" />
         <MediaCodec name="OMX.google.g711.alaw.decoder" type="audio/g711-alaw" />
         <MediaCodec name="OMX.google.g711.mlaw.decoder" type="audio/g711-mlaw" />
+	<MediaCodec name="OMX.google.opus.decoder" type="audio/opus"/>
+        <MediaCodec name="OMX.google.raw.decoder" type="audio/raw"/>
 
         <MediaCodec name="RkAudioDecoder_DTS" type="audio/vnd.dts.hd" />
         <MediaCodec name="RkAudioDecoder_AC3" type="audio/ac3" />
