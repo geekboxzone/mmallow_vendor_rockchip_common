@@ -9,7 +9,9 @@ PRODUCT_PACKAGES += \
     librk_demux \
     librk_hevcdec \
     libRkOMX_Resourcemanager \
-    librk_vpuapi 
+    librk_vpuapi \
+    librkffplayer \
+    libffmpeg
 
 ifeq ($(filter sofia%, $(TARGET_BOARD_PLATFORM)), )
 PRODUCT_PACKAGES += \
