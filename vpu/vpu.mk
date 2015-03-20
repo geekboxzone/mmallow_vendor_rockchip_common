@@ -9,9 +9,7 @@ PRODUCT_PACKAGES += \
     librk_demux \
     librk_hevcdec \
     libRkOMX_Resourcemanager \
-    librk_vpuapi \
-    librkffplayer \
-    libffmpeg
+    librk_vpuapi
 
 ifeq ($(filter sofia%, $(TARGET_BOARD_PLATFORM)), )
 PRODUCT_PACKAGES += \
@@ -19,7 +17,7 @@ PRODUCT_PACKAGES += \
     librkwmapro \
     librkswscale \
     libjesancache \
-    wfd 
+    wfd
 else
 ifeq ($(strip $(USE_INTEL_MDP)), true)
 PRODUCT_PACKAGES += \
@@ -37,6 +35,13 @@ ifeq ($(filter rk2928, $(TARGET_BOARD_PLATFORM)), )
 PRODUCT_PACKAGES += \
     libjpeghwdec \
     libjpeghwenc
+endif
+
+
+ifneq ($(filter rk%, $(TARGET_BOARD_PLATFORM)), )
+PRODUCT_PACKAGES += \
+    librkffplayer \
+    libffmpeg
 endif
 
 ifneq ($(filter rk%, $(TARGET_BOARD_PLATFORM)), )

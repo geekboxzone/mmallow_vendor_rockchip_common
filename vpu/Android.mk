@@ -1,5 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
+ifneq ($(filter rk%, $(TARGET_BOARD_PLATFORM)), )
 include $(CLEAR_VARS)
 LOCAL_MODULE := librkffplayer
 LOCAL_MODULE_TAGS := optional
@@ -29,7 +30,7 @@ else
 LOCAL_SRC_FILES := lib/$(TARGET_ARCH)/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
 endif
 include $(BUILD_PREBUILT)
-
+endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := wfd
@@ -47,7 +48,6 @@ endif
 LOCAL_MODULE_SUFFIX :=
 include $(BUILD_PREBUILT)
 
-$(warning ddddddddddddddddddddddddddddd)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libapedec
