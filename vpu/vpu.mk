@@ -1,11 +1,9 @@
 LOCAL_PATH := $(call my-dir)
 
 PRODUCT_PACKAGES += \
-    libapedec \
     libOMX_Core \
     libomxvpu_dec \
     libomxvpu_enc \
-    librk_audio \
     librk_demux \
     librk_hevcdec \
     libRkOMX_Resourcemanager \
@@ -17,6 +15,8 @@ PRODUCT_PACKAGES += \
     librkwmapro \
     librkswscale \
     libjesancache \
+    libapedec\
+    librk_audio \
     wfd
 else
 ifeq ($(strip $(USE_INTEL_MDP)), true)
