@@ -56,6 +56,9 @@ PRODUCT_PACKAGES += \
     ITVLauncher	\
     RKGameControlSettingV1.0.1	\
     RkMusic	\
-    Settings2	\
-    SimpleLauncher	
+    Settings2	
+  ifeq ($(strip $(BOARD_USE_LOW_MEM256)), true)
+        PRODUCT_PACKAGES += \
+              SimpleLauncher
+  endif
 endif
