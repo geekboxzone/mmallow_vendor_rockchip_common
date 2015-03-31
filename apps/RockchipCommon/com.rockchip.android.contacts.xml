@@ -1,0 +1,4 @@
+<permissions>
+    <library name="com.rockchip.android.contacts"
+            file="/system/framework/com.rockchip.android.contacts.jar" />
+</permissions>
