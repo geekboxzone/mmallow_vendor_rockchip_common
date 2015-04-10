@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright (C) 2014 Rockchip Electronics Co.Ltd
 
+
+     Copyright (C) 2013, 2014 Intel Mobile Communications GmbH
+
+     Notes:
+     Apr  2 2013: IMC: integration XMM6321
+     Apr 18 2013: IMC: add Intel HW video codecs
+     Aug 26 2013: IMC: xmm6321_svb disable Android codecs if possible
+     Apr  1 2014: IMC: SoFIA3g: eliminate Intel audio codecs and other
+                       obsolete entries
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -76,6 +85,7 @@ Only the three quirks included above are recognized at this point:
 -->
 
 <MediaCodecs>
+    <Include href="media_codecs_google_audio.xml" />
     <Decoders>
 	<MediaCodec name="OMX.rk.video_decoder.avc" type="video/avc" />
         <MediaCodec name="OMX.rk.video_decoder.m2v" type="video/mpeg2" /> 
@@ -84,37 +94,17 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.rk.video_decoder.h263" type="video/3gpp" />
         <MediaCodec name="OMX.rk.video_decoder.m4v" type="video/mp4v-es" />
         <MediaCodec name="OMX.rk.video_decoder.flv1" type="video/flv"/>
-        <MediaCodec name="OMX.rk.video_decoder.vp6" type="video/vp6"/>
+        <MediaCodec name="OMX.rk.video_decoder.vc1" type="video/vc1"/>
         <MediaCodec name="OMX.rk.video_decoder.mjpeg" type="video/mjpeg"/>
         <MediaCodec name="OMX.rk.video_decoder.hevc" type="video/hevc" />        
-        <MediaCodec name="RkVpuDecoder" type="video/avc" />
-        <MediaCodec name="RkVpuDecoder" type="video/flv" />
-        <MediaCodec name="RkVpuDecoder" type="video/mpeg2" />
-        <MediaCodec name="RkVpuDecoder" type="video/3gpp" />
-        <MediaCodec name="RkVpuDecoder" type="video/mp4v-es" />
-        <MediaCodec name="RkVpuDecoder" type="video/mjpeg" />
-        <MediaCodec name="RkVpuDecoder" type="video/vp6" />
-        <MediaCodec name="RkVpuDecoder" type="video/x-vnd.on2.vp8" />
-        <MediaCodec name="RkVpuDecoder" type="video/hevc" />
-	<MediaCodec name="OMX.google.h264.decoder" type="video/avc" />
-
+    
         <!-- intel audio -->
         <MediaCodec name="OMX.Intel.mp3.decoder" type="audio/mpeg" />
         <MediaCodec name="OMX.Intel.amrnb.decoder" type="audio/3gpp" />
         <MediaCodec name="OMX.Intel.amrwb.decoder" type="audio/amr-wb" />
         <MediaCodec name="OMX.Intel.aac.decoder" type="audio/mp4a-latm" />
+        <MediaCodec name="OMX.Intel.vorbis.decoder" type="audio/vorbis" />
         <!-- /intel audio -->
-        <MediaCodec name="OMX.google.mp3.decoder" type="audio/mpeg" />
-        <MediaCodec name="OMX.google.amrnb.decoder" type="audio/3gpp" />
-        <MediaCodec name="OMX.google.amrwb.decoder" type="audio/amr-wb" />
-        <MediaCodec name="OMX.google.aac.decoder" type="audio/mp4a-latm" />
-        <MediaCodec name="OMX.google.vorbis.decoder" type="audio/vorbis" />
-        <MediaCodec name="OMX.google.g711.alaw.decoder" type="audio/g711-alaw" />
-        <MediaCodec name="OMX.google.g711.mlaw.decoder" type="audio/g711-mlaw" />
-	<MediaCodec name="OMX.google.opus.decoder" type="audio/opus"/>
-        <MediaCodec name="OMX.google.raw.decoder" type="audio/raw"/>
-        <MediaCodec name="FLACDecoder" type="audio/flac" /> 
-        <MediaCodec name="AACDecoder_MIRRORING" type="audio/mp4a-latm" /> 
     </Decoders>
                                                                                                             
     <Encoders>
@@ -123,14 +113,8 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.Intel.amrnb.encoder" type="audio/3gpp" />
         <MediaCodec name="OMX.Intel.amrwb.encoder" type="audio/amr-wb" />
         <!-- /intel audio -->
-        <MediaCodec name="OMX.google.vp8.encoder" type="video/x-vnd.on2.vp8" />
         <MediaCodec name="OMX.rk.video_encoder.avc" type="video/avc" />
-        <MediaCodec name="RkVpuEncoder" type="video/avc" />
-	    <MediaCodec name="OMX.google.h263.encoder" type="video/3gpp" />
-	    <MediaCodec name="OMX.google.mpeg4.encoder" type="video/mp4v-es" />
-        <MediaCodec name="OMX.google.amrnb.encoder" type="audio/3gpp" />
-        <MediaCodec name="OMX.google.amrwb.encoder" type="audio/amr-wb" />
-        <MediaCodec name="OMX.google.aac.encoder" type="audio/mp4a-latm" />
-        <MediaCodec name="OMX.google.flac.encoder" type="audio/flac" />
     </Encoders>
+    <Include href="media_codecs_rk_vpu.xml" />
+    <Include href="media_codecs_google_video.xml" />
 </MediaCodecs>

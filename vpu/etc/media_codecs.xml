@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Copyright (C) 2012 The Android Open Source Project
+<!-- Copyright (C) 2014 Rockchip Electronics Co.Ltd
+     Copyright (C) 2012 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -84,21 +85,15 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.google.vp9.decoder" type="video/x-vnd.on2.vp9" /> 
         <MediaCodec name="OMX.rk.video_decoder.h263" type="video/3gpp" />
         <MediaCodec name="OMX.rk.video_decoder.m4v" type="video/mp4v-es" />
-        <MediaCodec name="OMX.rk.video_decoder.rv" type="video/vnd.rn-realvideo"/>
         <MediaCodec name="OMX.rk.video_decoder.flv1" type="video/flv"/>
-        <MediaCodec name="OMX.rk.video_decoder.vp6" type="video/vp6"/>
         <MediaCodec name="OMX.rk.video_decoder.vc1" type="video/vc1"/>
-        <MediaCodec name="OMX.rk.video_decoder.wmv3" type="video/x-ms-wmv"/>
         <MediaCodec name="OMX.rk.video_decoder.mjpeg" type="video/mjpeg"/>
         <MediaCodec name="OMX.rk.video_decoder.hevc" type="video/hevc"/>
 
     </Decoders>
                                                                                                             
     <Encoders>
-        <MediaCodec name="OMX.google.vp8.encoder" type="video/x-vnd.on2.vp8" />
         <MediaCodec name="OMX.rk.video_encoder.avc" type="video/avc" />
-        <MediaCodec name="OMX.google.h263.encoder" type="video/3gpp" />
-        <MediaCodec name="OMX.google.mpeg4.encoder" type="video/mp4v-es" />
     </Encoders>
     <Include href="media_codecs_rk_vpu.xml" />
     <Include href="media_codecs_google_video.xml" />
