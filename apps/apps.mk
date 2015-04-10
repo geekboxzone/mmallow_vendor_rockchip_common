@@ -1,11 +1,15 @@
 
 PRODUCT_PACKAGES += \
-    MediaFloat      \
     RkApkinstaller  \
     RkExpe          \
-    RKUpdateService \
-    RkUserExperienceService \
-    GoogleEmail
+    RKUpdateService
+
+ifneq ($(strip $(TARGET_BOARD_PLATFORM)), sofia3gr)
+PRODUCT_PACKAGES += \
+    MediaFloat      \
+    GoogleEmail     \
+    RkUserExperienceService
+endif
 
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk312x)
 PRODUCT_PACKAGES += \
