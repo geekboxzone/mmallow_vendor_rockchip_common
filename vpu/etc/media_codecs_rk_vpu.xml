@@ -26,8 +26,6 @@
         <MediaCodec name="RkVpuDecoder" type="video/mjpeg" />
         <MediaCodec name="RkVpuDecoder" type="video/x-vnd.on2.vp8" />
         <MediaCodec name="RkVpuDecoder" type="video/hevc" />
-        <MediaCodec name="RkAudioDecoder_WMA" type="audio/x-ms-wma" />
-        <MediaCodec name="RkAudioDecoder_WMAPRO" type="audio/x-ms-wmapro" />
         <MediaCodec name="RkAudioDecoder_WAV" type="audio/wav" />
         <MediaCodec name="FLACDecoder" type="audio/flac" /> 
     </Decoders>
