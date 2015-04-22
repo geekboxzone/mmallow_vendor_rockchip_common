@@ -37,11 +37,16 @@ PRODUCT_PACKAGES += \
     libjpeghwenc
 endif
 
+ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3368)
+PRODUCT_COPY_FILES += \
+    vendor/rockchip/common/vpu/lib/arm/rk3368/librkffplayer.so:system/lib/librkffplayer.so \
+    vendor/rockchip/common/vpu/lib/arm/rk3368/libffmpeg.so:system/lib/libffmpeg.so
+endif
 
-ifneq ($(filter rk%, $(TARGET_BOARD_PLATFORM)), )
-PRODUCT_PACKAGES += \
-    librkffplayer \
-    libffmpeg
+ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk312x)
+PRODUCT_COPY_FILES += \
+    vendor/rockchip/common/vpu/lib/arm/rk312x/librkffplayer.so:system/lib/librkffplayer.so \
+    vendor/rockchip/common/vpu/lib/arm/rk312x/libffmpeg.so:system/lib/libffmpeg.so
 endif
 
 PRODUCT_COPY_FILES += \
@@ -51,7 +56,7 @@ PRODUCT_COPY_FILES += \
 
 ifneq ($(filter rk%, $(TARGET_BOARD_PLATFORM)), )
 PRODUCT_COPY_FILES += \
-    vendor/rockchip/common/vpu/etc/media_codecs.xml:system/etc/media_codecs.xml 
+    vendor/rockchip/common/vpu/etc/media_codecs.xml:system/etc/media_codecs.xml
 else
 PRODUCT_COPY_FILES += \
 		vendor/rockchip/common/vpu/etc/media_codecs_sofia.xml:system/etc/media_codecs.xml
