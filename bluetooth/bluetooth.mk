@@ -29,7 +29,7 @@ PRODUCT_COPY_FILES += \
 #ifeq ($(strip $(BOARD_CONNECTIVITY_MODULE)), rtl8723bs_vq0)
 PRODUCT_COPY_FILES += \
     vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723bs_vq0/rtl8723b_fw:system/etc/firmware/rtl8723bs_VQ0_fw
-PODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
     vendor/rockchip/common/bluetooth/realtek/bt/firmware/rtl8723bs_vq0/rtl8723b_VQ0_config:system/etc/firmware/rtl8723bs_VQ0_config
 #endif
 
