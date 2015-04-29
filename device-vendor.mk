@@ -83,3 +83,8 @@ endif
 ifeq ($(PRODUCT_HAVE_DATACLONE)),true)
 $(call inherit-product-if-exists, vendor/rockchip/common/data_clone/packdata.mk)
 endif
+
+#for HDMI HDCP2
+ifeq ($(PRODUCT_HAVE_HDMIHDCP2), true)
+$(call inherit-product-if-exists, vendor/rockchip/common/hdcp2/hdcp2.mk)
+endif
