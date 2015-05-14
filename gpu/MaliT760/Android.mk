@@ -1,5 +1,5 @@
 LOCAL_PATH := $(call my-dir)
-ifeq ($(strip $(TARGET_BOARD_PLATFORM_GPU)), Mali-T760)
+ifeq ($(strip $(TARGET_BOARD_PLATFORM_GPU)), mali-t760)
 
 include $(CLEAR_VARS)
 LOCAL_PREBUILT_LIBS := lib/$(TARGET_ARCH)/libGLES_mali.so

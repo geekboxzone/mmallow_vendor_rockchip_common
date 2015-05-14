@@ -1,4 +1,4 @@
-ifeq ($(strip $(TARGET_BOARD_PLATFORM_GPU)), Mali-T760)
+ifeq ($(strip $(TARGET_BOARD_PLATFORM_GPU)), mali-t760)
 ifeq ($(strip $(TARGET_ARCH)), arm)
 PRODUCT_COPY_FILES += \
     vendor/rockchip/common/gpu/MaliT760/lib/$(TARGET_ARCH)/libGLES_mali.so:system/vendor/lib/egl/libGLES_mali.so \
