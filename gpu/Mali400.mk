@@ -15,7 +15,7 @@ PRODUCT_COPY_FILES += \
     vendor/rockchip/common/gpu/Mali400/lib/$(TARGET_ARCH)/rk3188/libGLES_mali.so:obj/lib/libGLES_mali.so
 endif
 
-ifneq ($(filter rk312x rk3036, $(strip $(TARGET_BOARD_PLATFORM))), )
+ifneq ($(filter rk312x rk3036, rk3188, $(strip $(TARGET_BOARD_PLATFORM))), )
 PRODUCT_COPY_FILES += \
     vendor/rockchip/common/gpu/Mali400/modules/$(TARGET_ARCH)/$(strip $(TARGET_BOARD_PLATFORM))/mali.ko:system/lib/modules/mali.ko
 endif
