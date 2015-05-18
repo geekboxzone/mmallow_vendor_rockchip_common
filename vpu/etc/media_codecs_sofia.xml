@@ -87,16 +87,70 @@ Only the three quirks included above are recognized at this point:
 <MediaCodecs>
     <Include href="media_codecs_google_audio.xml" />
     <Decoders>
-	<MediaCodec name="OMX.rk.video_decoder.avc" type="video/avc" />
-        <MediaCodec name="OMX.rk.video_decoder.m2v" type="video/mpeg2" /> 
-        <MediaCodec name="OMX.rk.video_decoder.vp8" type="video/x-vnd.on2.vp8" /> 
-        <MediaCodec name="OMX.google.vp9.decoder" type="video/x-vnd.on2.vp9" /> 
-        <MediaCodec name="OMX.rk.video_decoder.h263" type="video/3gpp" />
-        <MediaCodec name="OMX.rk.video_decoder.m4v" type="video/mp4v-es" />
-        <MediaCodec name="OMX.rk.video_decoder.flv1" type="video/flv"/>
-        <MediaCodec name="OMX.rk.video_decoder.vc1" type="video/vc1"/>
-        <MediaCodec name="OMX.rk.video_decoder.mjpeg" type="video/mjpeg"/>
-        <MediaCodec name="OMX.rk.video_decoder.hevc" type="video/hevc" />        
+	<MediaCodec name="OMX.rk.video_decoder.avc" type="video/avc">
+		<Limit name="size" max="1920x1088" min="96x96"/>
+		<Limit name="alignment" value="8x8"/>
+		<Limit name="block-size" value="16x16"/>
+		<Limit name="blocks-per-second" max="244800" min="1"/>
+		<Limit name="bitrate" range="1-10000000"/>
+		<Feature name="adaptive-playback"/>
+	</MediaCodec>
+        <MediaCodec name="OMX.rk.video_decoder.m2v" type="video/mpeg2">
+		<Limit name="size" max="1920x1088" min="96x96"/>
+                <Limit name="alignment" value="8x8"/>
+                <Limit name="block-size" value="16x8"/>
+                <Limit name="blocks-per-second" max="244800" min="1"/>
+                <Limit name="bitrate" range="1-10000000"/>
+                <Feature name="adaptive-playback"/>
+        </MediaCodec> 
+        	<MediaCodec name="OMX.rk.video_decoder.vp8" type="video/x-vnd.on2.vp8">
+		    <Limit name="size" max="1920x1088" min="96x96"/>
+                <Limit name="alignment" value="8x8"/>
+                <Limit name="block-size" value="16x16"/>
+                <Limit name="blocks-per-second" max="244800" min="1"/>
+                <Limit name="bitrate" range="1-10000000"/>
+                <Feature name="adaptive-playback"/>
+        </MediaCodec>  
+        <MediaCodec name="OMX.rk.video_decoder.h263" type="video/3gpp">
+		<Limit name="size" max="1920x1088" min="176x144"/>
+                <Limit name="alignment" value="8x8"/>
+                <Limit name="block-size" value="16x16"/>
+                <Limit name="blocks-per-second" max="244800" min="1"/>
+                <Limit name="bitrate" range="1-10000000"/>
+                <Feature name="adaptive-playback"/>
+        </MediaCodec>
+        <MediaCodec name="OMX.rk.video_decoder.m4v" type="video/mp4v-es">
+		<Limit name="size" max="1920x1088" min="96x96"/>
+                <Limit name="alignment" value="8x8"/>
+                <Limit name="block-size" value="16x16"/>
+                <Limit name="blocks-per-second" max="244800" min="1"/>
+                <Limit name="bitrate" range="1-10000000"/>
+                <Feature name="adaptive-playback"/>
+        </MediaCodec>
+        <MediaCodec name="OMX.rk.video_decoder.flv1" type="video/flv">
+		<Limit name="size" max="1920x1088" min="96x96"/>
+                <Limit name="alignment" value="8x8"/>
+                <Limit name="block-size" value="16x16"/>
+                <Limit name="blocks-per-second" max="244800" min="1"/>
+                <Limit name="bitrate" range="1-10000000"/>
+                <Feature name="adaptive-playback"/>
+        </MediaCodec>
+        <MediaCodec name="OMX.rk.video_decoder.mjpeg" type="video/mjpeg">
+		<Limit name="size" max="1920x1088" min="96x96"/>
+                <Limit name="alignment" value="8x8"/>
+                <Limit name="block-size" value="16x16"/>
+                <Limit name="blocks-per-second" max="244800" min="1"/>
+                <Limit name="bitrate" range="1-10000000"/>
+                <Feature name="adaptive-playback"/>
+        </MediaCodec>
+        <MediaCodec name="OMX.rk.video_decoder.hevc" type="video/hevc">
+		<Limit name="size" max="1920x1088" min="64x64"/>
+                <Limit name="alignment" value="8x8"/>
+                <Limit name="block-size" value="16x16"/>
+                <Limit name="blocks-per-second" max="244800" min="1"/>
+                <Limit name="bitrate" range="1-10000000"/>
+                <Feature name="adaptive-playback"/>
+        </MediaCodec>        
     
         <!-- intel audio -->
         <MediaCodec name="OMX.Intel.mp3.decoder" type="audio/mpeg" />
@@ -112,8 +166,14 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.Intel.aac.encoder" type="audio/mp4a-latm" />
         <MediaCodec name="OMX.Intel.amrnb.encoder" type="audio/3gpp" />
         <MediaCodec name="OMX.Intel.amrwb.encoder" type="audio/amr-wb" />
-        <!-- /intel audio -->
-        <MediaCodec name="OMX.rk.video_encoder.avc" type="video/avc" />
+        <!-- /rk avc encoder -->
+        <MediaCodec name="OMX.rk.video_encoder.avc" type="video/avc" >
+		<Limit name="size" min="96x96" max="1920x1088" />
+        	<Limit name="alignment" value="16x8" />
+        	<Limit name="bitrate" range="1-40000000" />
+        	<Feature name="bitrate-modes" value="VBR,CBR" />
+	</MediaCodec>
+
     </Encoders>
     <Include href="media_codecs_rk_vpu.xml" />
     <Include href="media_codecs_google_video.xml" />
