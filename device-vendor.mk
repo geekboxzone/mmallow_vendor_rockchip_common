@@ -88,3 +88,8 @@ endif
 ifeq ($(PRODUCT_HAVE_HDMIHDCP2), true)
 $(call inherit-product-if-exists, vendor/rockchip/common/hdcp2/hdcp2.mk)
 endif
+
+# OP-TEE
+ifeq ($(PRODUCT_HAVE_OPTEE),true)
+$(call inherit-product-if-exists, vendor/rockchip/common/security/optee/optee.mk)
+endif
