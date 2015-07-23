@@ -44,7 +44,8 @@ PRODUCT_COPY_FILES += \
 
 # vendor/bin
 PRODUCT_COPY_FILES += \
-    vendor/rockchip/common/gpu/libG6110/G6110_32/vendor/bin/pvrsrvctl:system/vendor/bin/pvrsrvctl
+    vendor/rockchip/common/gpu/libG6110/G6110_32/vendor/bin/pvrsrvctl:system/vendor/bin/pvrsrvctl \
+    vendor/rockchip/common/gpu/libG6110/G6110_32/vendor/bin/pvrtld:system/vendor/bin/pvrtld
 
 # vendor/lib
 PRODUCT_COPY_FILES += \
@@ -58,5 +59,8 @@ PRODUCT_COPY_FILES += \
     vendor/rockchip/common/gpu/libG6110/G6110_32/vendor/lib/libpvrANDROID_WSEGL.so:system/vendor/lib/libpvrANDROID_WSEGL.so \
     vendor/rockchip/common/gpu/libG6110/G6110_32/vendor/lib/libsrv_init.so:system/vendor/lib/libsrv_init.so \
     vendor/rockchip/common/gpu/libG6110/G6110_32/vendor/lib/libsrv_um.so:system/vendor/lib/libsrv_um.so \
-    vendor/rockchip/common/gpu/libG6110/G6110_32/vendor/lib/libusc.so:system/vendor/lib/libusc.so
+    vendor/rockchip/common/gpu/libG6110/G6110_32/vendor/lib/libusc.so:system/vendor/lib/libusc.so \
+    vendor/rockchip/common/gpu/libG6110/G6110_32/vendor/lib/libPVROCL.so:system/vendor/lib/libPVROCL.so \
+    vendor/rockchip/common/gpu/libG6110/G6110_32/vendor/lib/liboclcompiler.so:system/vendor/lib/liboclcompiler.so \
+    vendor/rockchip/common/gpu/libG6110/G6110_32/vendor/lib/libufwriter.so:system/vendor/lib/libufwriter.so
 endif
