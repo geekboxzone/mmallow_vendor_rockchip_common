@@ -5,9 +5,10 @@ PRODUCT_PROPERTY_OVERRIDES += debug.hwui.render_dirty_regions=false
 ifeq ($(strip $(GRAPHIC_MEMORY_PROVIDER)), dma_buf)
 PRODUCT_COPY_FILES += \
     vendor/rockchip/common/gpu/Mali450/lib/$(TARGET_ARCH)/libGLES_mali.so:system/lib/egl/libGLES_mali.so \
-    vendor/rockchip/common/gpu/Mali450/lib/$(TARGET_ARCH)/libGLES_mali.so:obj/lib/libGLES_mali.so \
-    vendor/rockchip/common/gpu/Mali450/lib/$(TARGET_ARCH)/hwuihas.bin:system/etc/hwuihas.bin \
-    vendor/rockchip/common/gpu/Mali450/lib/$(TARGET_ARCH)/hwuishader.bin :system/etc/hwuishader.bin 
+    vendor/rockchip/common/gpu/Mali450/lib/$(TARGET_ARCH)/libGLES_mali.so:obj/lib/libGLES_mali.so
+#    vendor/rockchip/common/gpu/Mali450/lib/$(TARGET_ARCH)/libGLES_mali.so:obj/lib/libGLES_mali.so \
+#    vendor/rockchip/common/gpu/Mali450/lib/$(TARGET_ARCH)/hwuihas.bin:system/etc/hwuihas.bin \
+#    vendor/rockchip/common/gpu/Mali450/lib/$(TARGET_ARCH)/hwuishader.bin :system/etc/hwuishader.bin 
 
 
 PRODUCT_COPY_FILES += \
