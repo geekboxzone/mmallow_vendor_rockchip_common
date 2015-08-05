@@ -47,12 +47,16 @@ PRODUCT_COPY_FILES += \
     vendor/rockchip/common/vpu/etc/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     vendor/rockchip/common/vpu/etc/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     vendor/rockchip/common/vpu/etc/media_codecs_rk_vpu.xml:system/etc/media_codecs_rk_vpu.xml
-
-ifneq ($(filter rk%, $(TARGET_BOARD_PLATFORM)), )
-PRODUCT_COPY_FILES += \
-    vendor/rockchip/common/vpu/etc/media_codecs.xml:system/etc/media_codecs.xml
+ifneq ($(filter rk312x rk3188, $(TARGET_BOARD_PLATFORM)), )
+    PRODUCT_COPY_FILES += \
+        vendor/rockchip/common/vpu/etc/media_codecs.xml:system/etc/media_codecs_rk312x.xml
 else
-PRODUCT_COPY_FILES += \
-		vendor/rockchip/common/vpu/etc/media_codecs_sofia.xml:system/etc/media_codecs.xml
+    ifneq ($(filter rk%, $(TARGET_BOARD_PLATFORM)), )
+        PRODUCT_COPY_FILES += \
+            vendor/rockchip/common/vpu/etc/media_codecs.xml:system/etc/media_codecs.xml
+    else
+        PRODUCT_COPY_FILES += \
+             vendor/rockchip/common/vpu/etc/media_codecs_sofia.xml:system/etc/media_codecs.xml
+    endif
 endif
 
