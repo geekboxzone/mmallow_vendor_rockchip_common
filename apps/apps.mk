@@ -46,7 +46,9 @@ endif
 
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)), sofia3gr)
 PRODUCT_PACKAGES += \
-    ituxd
+    ituxd\
+    com.rockchip.alarmhelper
+
 #PRODUCT_COPY_FILES += \
 #        $(LOCAL_PATH)/ituxd/lib/x86/libthermalJNI.so:system/lib/libthermalJNI.so 
 endif
