@@ -2,13 +2,14 @@
 PRODUCT_PACKAGES += \
     RkApkinstaller  \
     RkExpe          \
-    RKUpdateService
+    RKUpdateService \
+	userExperienceService
 
 ifneq ($(strip $(TARGET_BOARD_PLATFORM)), sofia3gr)
 PRODUCT_PACKAGES += \
     MediaFloat      \
-    GoogleEmail     \
-    RkUserExperienceService
+    GoogleEmail
+
 endif
 
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk312x)
@@ -50,7 +51,7 @@ PRODUCT_PACKAGES += \
     com.rockchip.alarmhelper
 
 #PRODUCT_COPY_FILES += \
-#        $(LOCAL_PATH)/ituxd/lib/x86/libthermalJNI.so:system/lib/libthermalJNI.so 
+#        $(LOCAL_PATH)/ituxd/lib/x86/libthermalJNI.so:system/lib/libthermalJNI.so
 endif
 
 
@@ -62,7 +63,7 @@ PRODUCT_PACKAGES += \
     ITVLauncher	\
     RKGameControlSettingV1.0.1	\
     RkMusic	\
-    Settings2	
+    Settings2
   ifeq ($(strip $(BOARD_USE_LOW_MEM256)), true)
         PRODUCT_PACKAGES += \
               SimpleLauncher
