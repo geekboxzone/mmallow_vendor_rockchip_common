@@ -93,3 +93,8 @@ endif
 ifeq ($(PRODUCT_HAVE_OPTEE),true)
 $(call inherit-product-if-exists, vendor/rockchip/common/security/optee/optee.mk)
 endif
+
+
+ifeq ($(PRODUCT_HAVE_PLUGINSVC),true)
+$(call inherit-product-if-exists, vendor/rockchip/common/pluginsvc/pluginsvc.mk)
+endif

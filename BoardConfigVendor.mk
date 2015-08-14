@@ -36,5 +36,6 @@ else
 # For sofia platforms
 PRODUCT_HAVE_RKVPU ?= true
 PRODUCT_HAVE_RKTOOLS ?= true
+PRODUCT_HAVE_PLUGINSVC ?= true
 
 endif
