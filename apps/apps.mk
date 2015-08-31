@@ -7,6 +7,7 @@ PRODUCT_PACKAGES += \
 
 ifneq ($(strip $(TARGET_BOARD_PLATFORM)), sofia3gr)
 PRODUCT_PACKAGES += \
+    WinStartService \
     MediaFloat      \
     GoogleEmail
 
