@@ -40,7 +40,8 @@ endif
 ifneq ($(filter rk%, $(TARGET_BOARD_PLATFORM)), )
 PRODUCT_PACKAGES += \
     librkffplayer \
-    libffmpeg
+    libffmpeg \
+	iso
 endif
 
 PRODUCT_COPY_FILES += \
