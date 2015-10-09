@@ -72,9 +72,9 @@ Mount() {
 			$ECHO "busybox1.11 losetup $1 "$LINE" $?"
 			return
 		fi
-		busybox1.11 mount $1 /mnt/iso >> /data/iso.txt
+		busybox1.11 mount -t udf $1 /mnt/iso >> /data/iso.txt
 		if [ "$?" != 0 ] ; then
-			$ECHO "busybox1.11 mount $1 /mnt/iso $?"
+			$ECHO "busybox1.11 mount -t udf $1 /mnt/iso $?"
 			return
 		fi
 	done < $2
