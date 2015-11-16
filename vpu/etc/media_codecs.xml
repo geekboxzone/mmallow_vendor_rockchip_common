@@ -153,5 +153,6 @@ Only the three quirks included above are recognized at this point:
             <Feature name="bitrate-modes" value="VBR,CBR" />
         </MediaCodec>
     </Encoders>
+    <Include href="media_codecs_rk_vpu.xml" />
     <Include href="media_codecs_google_video.xml" />
 </MediaCodecs>

@@ -17,17 +17,8 @@
 
 <MediaCodecs>
     <Decoders>
-        <MediaCodec name="RkVpuDecoder" type="video/avc" />
-        <MediaCodec name="RkVpuDecoder" type="video/flv" />
-        <MediaCodec name="RkVpuDecoder" type="video/mpeg2" />
-        <MediaCodec name="RkVpuDecoder" type="video/vc1" />
-        <MediaCodec name="RkVpuDecoder" type="video/3gpp" />
-        <MediaCodec name="RkVpuDecoder" type="video/mp4v-es" />
-        <MediaCodec name="RkVpuDecoder" type="video/mjpeg" />
-        <MediaCodec name="RkVpuDecoder" type="video/x-vnd.on2.vp8" />
-        <MediaCodec name="RkVpuDecoder" type="video/hevc" />
         <MediaCodec name="RkAudioDecoder_WAV" type="audio/wav" />
-        <MediaCodec name="FLACDecoder" type="audio/flac" /> 
+        <MediaCodec name="FLACDecoder" type="audio/flac" />
     </Decoders>
     <Encoders>
         <MediaCodec name="RkVpuEncoder" type="video/avc" />
