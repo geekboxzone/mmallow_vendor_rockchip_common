@@ -8,7 +8,7 @@ PRODUCT_PACKAGES += \
 ifneq ($(strip $(TARGET_BOARD_PLATFORM)), sofia3gr)
 PRODUCT_PACKAGES += \
     MediaFloat      \
-    GoogleEmail
+#    GoogleEmail
 
 endif
 
