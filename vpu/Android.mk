@@ -72,29 +72,53 @@ endif
 include $(BUILD_PREBUILT)
 endif
 
-ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk312x)
+# use new vpu framework mpp
+USE_MPP := false
+ifneq ($(filter rk312x rk3368, $(strip $(TARGET_BOARD_PLATFORM))), )
+USE_MPP := true
+endif 
+
+ifeq ($(USE_MPP), true)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libmpp
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_STEM := $(LOCAL_MODULE)
 LOCAL_MODULE_SUFFIX := .so
-LOCAL_SRC_FILES := lib/$(TARGET_ARCH)/rk312x/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
+
+ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3368)
+ifneq ($(strip $(TARGET_2ND_ARCH)), )
+LOCAL_MULTILIB := both
+LOCAL_SRC_FILES_$(TARGET_ARCH) := lib/arm/rk312x/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
+LOCAL_SRC_FILES_$(TARGET_2ND_ARCH) := lib/arm/rk312x/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
+else
+LOCAL_SRC_FILES := lib/arm/rk312x/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
+endif
+
 include $(BUILD_PREBUILT)
 endif
 
-ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk312x)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libvpu
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_STEM := $(LOCAL_MODULE)
 LOCAL_MODULE_SUFFIX := .so
-ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk312x)
-LOCAL_SRC_FILES := lib/$(TARGET_ARCH)/rk312x/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
+
+ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3368)
+ifneq ($(strip $(TARGET_2ND_ARCH)), )
+LOCAL_MULTILIB := both
+LOCAL_SRC_FILES_$(TARGET_ARCH) := lib/$(TARGET_ARCH)/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
+LOCAL_SRC_FILES_$(TARGET_2ND_ARCH) := lib/arm/rk312x/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
+else
+LOCAL_SRC_FILES := lib/arm/rk312x/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
 endif
+
 include $(BUILD_PREBUILT)
 endif
+
+endif
+#end use new vpu framework mpp 
 
 #ape and rkaudio dec will be dropped on sofia platform
 ifneq ($(filter rk%, $(TARGET_BOARD_PLATFORM)), )
