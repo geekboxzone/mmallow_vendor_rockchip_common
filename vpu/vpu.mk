@@ -48,7 +48,8 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/rockchip/common/vpu/etc/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     vendor/rockchip/common/vpu/etc/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    vendor/rockchip/common/vpu/etc/media_codecs_rk_vpu.xml:system/etc/media_codecs_rk_vpu.xml
+    vendor/rockchip/common/vpu/etc/media_codecs_rk_vpu.xml:system/etc/media_codecs_rk_vpu.xml \
+    vendor/rockchip/common/vpu/etc/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
 ifneq ($(filter rk312x rk3188, $(TARGET_BOARD_PLATFORM)), )
     PRODUCT_COPY_FILES += \
         vendor/rockchip/common/vpu/etc/media_codecs_rk312x.xml:system/etc/media_codecs.xml
