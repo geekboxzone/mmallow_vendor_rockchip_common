@@ -1,7 +1,6 @@
 
 PRODUCT_PACKAGES += \
     RkApkinstaller  \
-    RkExpe          \
     RKUpdateService \
 	userExperienceService
 
