@@ -1,4 +1,4 @@
-ifneq ($(filter %64, $(TARGET_PRODUCT)), )
+ifneq ($(strip $(TARGET_2ND_ARCH)), )
 # lib
 PRODUCT_COPY_FILES += \
     vendor/rockchip/common/gpu/libG6110/G6110_64/lib/egl/egl.cfg:system/lib/egl/egl.cfg \
