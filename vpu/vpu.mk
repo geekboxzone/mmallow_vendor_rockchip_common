@@ -41,8 +41,13 @@ ifneq ($(filter rk%, $(TARGET_BOARD_PLATFORM)), )
 PRODUCT_PACKAGES += \
     librkffplayer \
     libffmpeg \
+    iso
+endif
+
+ifneq ($(filter rk3228 rk3366 rk3399 rk312x, $(strip $(TARGET_BOARD_PLATFORM))), )
+PRODUCT_PACKAGES += \
     libmpp \
-	iso
+    libvpu
 endif
 
 PRODUCT_COPY_FILES += \

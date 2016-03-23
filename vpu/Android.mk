@@ -112,7 +112,7 @@ endif
 
 # use new vpu framework mpp
 USE_MPP := false
-ifneq ($(filter rk312x rk3288 rk3368 rk3366, $(strip $(TARGET_BOARD_PLATFORM))), )
+ifneq ($(filter rk3228 rk3366 rk3399, $(strip $(TARGET_BOARD_PLATFORM))), )
 USE_MPP := true
 endif 
 
@@ -124,18 +124,12 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_STEM := $(LOCAL_MODULE)
 LOCAL_MODULE_SUFFIX := .so
 
-#ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3368)
-ifneq ($(strip $(TARGET_2ND_ARCH)), )
-LOCAL_MULTILIB := both
-LOCAL_SRC_FILES_$(TARGET_ARCH) := lib/arm/rk312x/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
-LOCAL_SRC_FILES_$(TARGET_2ND_ARCH) := lib/arm/rk312x/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
-else
-LOCAL_SRC_FILES := lib/arm/rk312x/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
-endif
+LOCAL_SRC_FILES := lib/arm/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
 
 include $(BUILD_PREBUILT)
-#endif
+endif
 
+ifeq ($(USE_MPP), true)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libvpu
 LOCAL_MODULE_TAGS := optional
@@ -143,17 +137,9 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_STEM := $(LOCAL_MODULE)
 LOCAL_MODULE_SUFFIX := .so
 
-#ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3368)
-ifneq ($(strip $(TARGET_2ND_ARCH)), )
-LOCAL_MULTILIB := both
-LOCAL_SRC_FILES_$(TARGET_ARCH) := lib/$(TARGET_ARCH)/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
-LOCAL_SRC_FILES_$(TARGET_2ND_ARCH) := lib/arm/rk312x/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
-else
-LOCAL_SRC_FILES := lib/arm/rk312x/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
-endif
+LOCAL_SRC_FILES := lib/arm/$(LOCAL_MODULE)$(LOCAL_MODULE_SUFFIX)
 
 include $(BUILD_PREBUILT)
-#endif
 
 endif
 #end use new vpu framework mpp 
