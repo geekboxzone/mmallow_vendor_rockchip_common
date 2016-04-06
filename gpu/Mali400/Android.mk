@@ -34,7 +34,11 @@ else
 
 
 include $(CLEAR_VARS)
+ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk322x)
+LOCAL_PREBUILT_LIBS := lib/$(TARGET_ARCH)/rk322x/libGLES_mali.so
+else
 LOCAL_PREBUILT_LIBS := lib/$(TARGET_ARCH)/libGLES_mali.so
+endif
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_MULTI_PREBUILT)
 
