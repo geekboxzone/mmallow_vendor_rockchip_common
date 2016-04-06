@@ -3,9 +3,16 @@ ifeq ($(strip $(TARGET_ARCH)), arm)
 PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcdc_composer=0
 PRODUCT_PROPERTY_OVERRIDES += debug.hwui.render_dirty_regions=false
 ifeq ($(strip $(GRAPHIC_MEMORY_PROVIDER)), dma_buf)
+
+ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk322x)
+PRODUCT_COPY_FILES += \
+    vendor/rockchip/common/gpu/Mali400/lib/$(TARGET_ARCH)/rk322x/libGLES_mali.so:system/lib/egl/libGLES_mali.so \
+    vendor/rockchip/common/gpu/Mali400/lib/$(TARGET_ARCH)/rk322x/libGLES_mali.so:obj/lib/libGLES_mali.so
+else
 PRODUCT_COPY_FILES += \
     vendor/rockchip/common/gpu/Mali400/lib/$(TARGET_ARCH)/libGLES_mali.so:system/lib/egl/libGLES_mali.so \
     vendor/rockchip/common/gpu/Mali400/lib/$(TARGET_ARCH)/libGLES_mali.so:obj/lib/libGLES_mali.so
+endif
 
 ifneq ($(filter rk312x rk3036 rk3188, $(strip $(TARGET_BOARD_PLATFORM))), )
 PRODUCT_COPY_FILES += \
