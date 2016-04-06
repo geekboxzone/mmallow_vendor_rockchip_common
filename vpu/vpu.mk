@@ -37,6 +37,15 @@ PRODUCT_PACKAGES += \
     libjpeghwenc
 endif
 
+ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk322x)
+PRODUCT_COPY_FILES += \
+	vendor/rockchip/common/vpu/lib/arm/rk322x/libmpp.so:system/lib/libmpp.so \
+	vendor/rockchip/common/vpu/lib/arm/rk322x/libvpu.so:system/lib/libvpu.so \
+	vendor/rockchip/common/vpu/lib/arm/rk322x/modules/vcodec_service.ko:system/lib/modules/vcodec_service.ko
+PRODUCT_PACKAGES += \
+	libiep
+endif
+
 ifneq ($(filter rk%, $(TARGET_BOARD_PLATFORM)), )
 PRODUCT_PACKAGES += \
     librkffplayer \
