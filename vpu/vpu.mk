@@ -53,7 +53,7 @@ PRODUCT_PACKAGES += \
     iso
 endif
 
-ifneq ($(filter rk3228 rk3366 rk3399 rk312x, $(strip $(TARGET_BOARD_PLATFORM))), )
+ifneq ($(filter rk3228 rk3288 rk3366 rk3399, $(strip $(TARGET_BOARD_PLATFORM))), )
 PRODUCT_PACKAGES += \
     libmpp \
     libvpu
