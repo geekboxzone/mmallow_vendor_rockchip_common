@@ -1,6 +1,5 @@
 
 PRODUCT_PACKAGES += \
-    RkApkinstaller  \
     RKUpdateService \
 	userExperienceService
 
@@ -64,12 +63,8 @@ endif
 ###########for box app ################
 ifeq ($(strip $(TARGET_BOARD_PLATFORM_PRODUCT)), box)
 PRODUCT_PACKAGES += \
-    AllApp	\
     eHomeMediaCenter_box	\
-    ITVLauncher	\
-    RKGameControlSettingV1.0.1	\
-    RkMusic	\
-    Settings2
+    RkMusic
   ifeq ($(strip $(BOARD_USE_LOW_MEM256)), true)
         PRODUCT_PACKAGES += \
               SimpleLauncher
