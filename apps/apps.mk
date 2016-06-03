@@ -1,8 +1,22 @@
 
 PRODUCT_PACKAGES += \
     RkApkinstaller  \
-    RKUpdateService \
-	userExperienceService
+    userExperienceService
+
+PRODUCT_PACKAGES += \
+    RKUpdateService
+
+ifeq ($(strip $(TARGET_BOARD_HARDWARE)), rk30board)
+ifeq ($(strip $(TARGET_ARCH)), arm)
+PRODUCT_COPY_FILES += \
+       vendor/rockchip/common/apps/RKUpdateService/lib/arm/librockchip_update_jni.so:system/lib/librockchip_update_jni.so
+else ifeq ($(strip $(TARGET_ARCH)), arm64)
+PRODUCT_COPY_FILES += \
+       vendor/rockchip/common/apps/RKUpdateService/lib/arm/librockchip_update_jni.so:system/lib/librockchip_update_jni.so \
+       vendor/rockchip/common/apps/RKUpdateService/lib/arm64/librockchip_update_jni.so:system/lib64/librockchip_update_jni.so
+endif
+endif
+
 
 ifneq ($(strip $(TARGET_BOARD_PLATFORM)), sofia3gr)
 PRODUCT_PACKAGES += \
