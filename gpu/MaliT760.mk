@@ -1,7 +1,11 @@
 ifeq ($(strip $(TARGET_BOARD_PLATFORM_GPU)), mali-t760)
 ifeq ($(strip $(TARGET_ARCH)), arm)
 PRODUCT_COPY_FILES += \
+ifeq ($(strip $(TARGET_BOARD_PLATFORM_PRODUCT)), vr)
+    vendor/rockchip/common/gpu/MaliT760/lib/$(TARGET_ARCH)/vr/libGLES_mali.so:system/vendor/lib/egl/libGLES_mali.so \
+else
     vendor/rockchip/common/gpu/MaliT760/lib/$(TARGET_ARCH)/libGLES_mali.so:system/vendor/lib/egl/libGLES_mali.so \
+endif
     vendor/rockchip/common/gpu/MaliT760/modules/$(TARGET_ARCH)/mali_kbase.ko:system/lib/modules/mali_kbase.ko \
     vendor/rockchip/common/gpu/gpu_performance/bin/$(TARGET_ARCH)/performance:system/bin/performance \
     vendor/rockchip/common/gpu/gpu_performance/lib/$(TARGET_ARCH)/libperformance_runtime.so:system/lib/libperformance_runtime.so \
