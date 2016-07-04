@@ -1,7 +1,4 @@
 
-PRODUCT_PACKAGES += \
-    RkApkinstaller  \
-    userExperienceService
 
 PRODUCT_PACKAGES += \
     RKUpdateService
@@ -17,7 +14,10 @@ PRODUCT_COPY_FILES += \
 endif
 endif
 
-
+ifneq ($(strip $(TARGET_BOARD_PLATFORM_PRODUCT)), vr)
+PRODUCT_PACKAGES += \
+    RkApkinstaller  \
+    userExperienceService
 ifneq ($(strip $(TARGET_BOARD_PLATFORM)), sofia3gr)
 PRODUCT_PACKAGES += \
     MediaFloat      \
@@ -56,6 +56,9 @@ else
 PRODUCT_PACKAGES += \
     RkExplorer
 endif
+endif
+
+
 
 ifeq ($(strip $(BOARD_HAS_STRESSTEST_APP)), true)
     PRODUCT_PACKAGES += \
@@ -74,6 +77,12 @@ PRODUCT_PACKAGES += \
 #        $(LOCAL_PATH)/ituxd/lib/x86/libthermalJNI.so:system/lib/libthermalJNI.so
 endif
 
+##################for vr app#####################
+ifeq ($(strip $(TARGET_BOARD_PLATFORM_PRODUCT)), vr)
+PRODUCT_PACKAGES += \
+		RockVRHome	\
+		RKVRPlayer	
+endif
 
 ###########for box app ################
 ifeq ($(strip $(TARGET_BOARD_PLATFORM_PRODUCT)), box)
