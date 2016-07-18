@@ -46,6 +46,18 @@ PRODUCT_PACKAGES += \
 	libiep
 endif
 
+ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3399)
+PRODUCT_COPY_FILES += \
+	vendor/rockchip/common/vpu/lib/arm/rk3399/libjpeghwenc.so:system/lib/libjpeghwenc.so
+endif
+
+ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3366)
+PRODUCT_COPY_FILES += \
+	vendor/rockchip/common/vpu/lib/arm/rk3366/libjpeghwenc.so:system/lib/libjpeghwenc.so
+endif
+
+
+
 ifneq ($(filter rk%, $(TARGET_BOARD_PLATFORM)), )
 PRODUCT_PACKAGES += \
     librkffplayer \
