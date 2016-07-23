@@ -21,8 +21,6 @@ PRODUCT_PACKAGES += \
 ifneq ($(strip $(TARGET_BOARD_PLATFORM)), sofia3gr)
 PRODUCT_PACKAGES += \
     MediaFloat      \
-#    GoogleEmail
-
 endif
 
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)), rk3288)
@@ -38,10 +36,6 @@ else
 ifeq ($(strip $(TARGET_BOARD_PLATFORM_PRODUCT)), box)
 PRODUCT_PACKAGES += \
     RkBoxVideoPlayer
-else
-ifeq ($(strip $(TARGET_BOARD_PLATFORM)), sofia3gr)
-PRODUCT_PACKAGES += \
-    Rk3grVideoPlayer
 else
 PRODUCT_PACKAGES += \
     Rk4kVideoPlayer
@@ -90,7 +84,6 @@ PRODUCT_PACKAGES += \
     AllApp	\
     eHomeMediaCenter_box	\
     ITVLauncher	\
-    RKGameControlSettingV1.0.1	\
     RkMusic	\
     Settings2
   ifeq ($(strip $(BOARD_USE_LOW_MEM256)), true)
