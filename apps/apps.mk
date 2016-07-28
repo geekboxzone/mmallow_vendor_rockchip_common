@@ -75,6 +75,8 @@ endif
 ifeq ($(strip $(TARGET_BOARD_PLATFORM_PRODUCT)), vr)
 PRODUCT_PACKAGES += \
 		RockVRHome	\
+		RKVRSettings	\
+		RKVRExplorer	\
 		RKVRPlayer	
 endif
 
