@@ -9,13 +9,11 @@ PRODUCT_COPY_FILES += \
     $(CUR_PATH)/phone/etc/ppp/ip-up:system/etc/ppp/ip-up \
     $(CUR_PATH)/phone/etc/ppp/call-pppd:system/etc/ppp/call-pppd \
     $(CUR_PATH)/phone/etc/operator_table:system/etc/operator_table
-ifneq ($(strip $(TARGET_BOARD_PLATFORM)), rk3188)
+
 PRODUCT_COPY_FILES += \
     $(CUR_PATH)/phone/bin/usb_modeswitch.sh:system/bin/usb_modeswitch.sh \
-    $(CUR_PATH)/phone/bin/usb_modeswitch:system/bin/usb_modeswitch \
-    $(CUR_PATH)/phone/bin/chat:system/bin/chat \
-    $(CUR_PATH)/phone/lib/libril-rk29-dataonly.so:system/lib/libril-rk29-dataonly.so
-endif
+    $(CUR_PATH)/phone/bin/usb_modeswitch:system/bin/usb_modeswitch
+
 modeswitch_files := $(shell ls $(CUR_PATH)/phone/etc/usb_modeswitch.d)
 PRODUCT_COPY_FILES += \
     $(foreach file, $(modeswitch_files), \
@@ -23,6 +21,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     rild \
+    libril-rk29-dataonly \
     chat 
 
 
