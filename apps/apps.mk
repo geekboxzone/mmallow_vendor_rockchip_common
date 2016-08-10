@@ -77,6 +77,8 @@ PRODUCT_PACKAGES += \
 		RockVRHome	\
 		RKVRSettings	\
 		RKVRExplorer	\
+		RKVRGlobalActions	\
+		RKVRDeviceTest	\
 		RKVRPlayer	
 endif
 

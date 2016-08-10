@@ -12,7 +12,7 @@ LOCAL_CERTIFICATE := PRESIGNED
 #LOCAL_OVERRIDES_PACKAGES := 
 LOCAL_SRC_FILES := $(LOCAL_MODULE).apk
 #LOCAL_REQUIRED_MODULES :=
-LOCAL_PREBUILT_JNI_LIBS := \
+#LOCAL_PREBUILT_JNI_LIBS := \
         lib/arm/libvr-jni.so    \
         lib/arm/libvrtoolkit.so \
         lib/arm/libvraudio_engine.so
