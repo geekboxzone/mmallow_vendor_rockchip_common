@@ -78,6 +78,7 @@ PRODUCT_PACKAGES += \
 		RKVRSettings	\
 		RKVRExplorer	\
 		RKVRGlobalActions	\
+                RKVRPanorama	\
 		RKVRPlayer	
 endif
 
