@@ -78,7 +78,6 @@ PRODUCT_PACKAGES += \
 		RKVRSettings	\
 		RKVRExplorer	\
 		RKVRGlobalActions	\
-		RKVRDeviceTest	\
 		RKVRPlayer	
 endif
 
