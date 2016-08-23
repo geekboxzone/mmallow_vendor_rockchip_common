@@ -118,7 +118,7 @@ endif
 
 # use new vpu framework mpp
 USE_MPP := false
-ifneq ($(filter rk3228 rk3229 rk322x rk3288 rk3366 rk3399, $(strip $(TARGET_BOARD_PLATFORM))), )
+ifneq ($(filter rk3228 rk3229 rk322x rk3366 rk3399, $(strip $(TARGET_BOARD_PLATFORM))), )
 USE_MPP := true
 endif 
 
