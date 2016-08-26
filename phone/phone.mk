@@ -19,6 +19,13 @@ PRODUCT_COPY_FILES += \
     $(foreach file, $(modeswitch_files), \
     $(CUR_PATH)/phone/etc/usb_modeswitch.d/$(file):system/etc/usb_modeswitch.d/$(file))
 
+ifeq ($(strip $(PRODUCT_MODEM)), DTS4108C)
+PRODUCT_COPY_FILES += \
+    $(CUR_PATH)/phone/bin/rild_dts4108c:system/bin/rild \
+    $(CUR_PATH)/phone/lib/libreference-ril-dts4108c.so:system/lib/libreference-ril.so \
+    $(CUR_PATH)/phone/lib/libril-dts4108c.so:system/lib/libril.so
+endif
+
 PRODUCT_PACKAGES += \
     rild \
     libril-rk29-dataonly \
