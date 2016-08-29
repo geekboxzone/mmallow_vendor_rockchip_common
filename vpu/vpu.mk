@@ -100,3 +100,7 @@ else
     endif
 endif
 
+ifeq ($(PRODUCT_BUILD_MODULE),car)
+PRODUCT_PACKAGES += \
+     libdrivingrecoder
+endif
