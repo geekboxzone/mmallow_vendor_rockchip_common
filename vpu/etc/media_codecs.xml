@@ -91,7 +91,7 @@ Only the three quirks included above are recognized at this point:
             <Limit name="blocks-per-second" max="244800" min="1"/>
             <Limit name="bitrate" range="1-10000000"/>
             <Feature name="adaptive-playback"/>
-            <Limit name="concurrent-instances" max="32" />
+            <Limit name="concurrent-instances" max="6" />
         </MediaCodec>
         <MediaCodec name="OMX.rk.video_decoder.m2v" type="video/mpeg2">
             <Limit name="size" max="1920x1088" min="176x144"/>
@@ -100,7 +100,7 @@ Only the three quirks included above are recognized at this point:
             <Limit name="blocks-per-second" max="244800" min="1"/>
             <Limit name="bitrate" range="1-10000000"/>
             <Feature name="adaptive-playback"/>
-            <Limit name="concurrent-instances" max="32" />
+            <Limit name="concurrent-instances" max="6" />
         </MediaCodec> 
         <MediaCodec name="OMX.rk.video_decoder.vp8" type="video/x-vnd.on2.vp8">
             <Limit name="size" max="1920x1088" min="176x144"/>
@@ -109,7 +109,7 @@ Only the three quirks included above are recognized at this point:
             <Limit name="blocks-per-second" max="244800" min="1"/>
             <Limit name="bitrate" range="1-10000000"/>
             <Feature name="adaptive-playback"/>
-            <Limit name="concurrent-instances" max="32" />
+            <Limit name="concurrent-instances" max="6" />
         </MediaCodec>  
         <MediaCodec name="OMX.rk.video_decoder.h263" type="video/3gpp">
             <Limit name="size" max="1920x1088" min="176x144"/>
@@ -118,7 +118,7 @@ Only the three quirks included above are recognized at this point:
             <Limit name="blocks-per-second" max="244800" min="1"/>
             <Limit name="bitrate" range="1-10000000"/>
             <Feature name="adaptive-playback"/>
-            <Limit name="concurrent-instances" max="32" />
+            <Limit name="concurrent-instances" max="6" />
         </MediaCodec>
         <MediaCodec name="OMX.rk.video_decoder.m4v" type="video/mp4v-es">
             <Limit name="size" max="1920x1088" min="176x144"/>
@@ -127,7 +127,7 @@ Only the three quirks included above are recognized at this point:
             <Limit name="blocks-per-second" max="244800" min="1"/>
             <Limit name="bitrate" range="1-10000000"/>
             <Feature name="adaptive-playback"/>
-            <Limit name="concurrent-instances" max="32" />
+            <Limit name="concurrent-instances" max="6" />
         </MediaCodec>
         <MediaCodec name="OMX.rk.video_decoder.flv1" type="video/flv">
             <Limit name="size" max="1920x1088" min="176x144"/>
@@ -136,7 +136,7 @@ Only the three quirks included above are recognized at this point:
             <Limit name="blocks-per-second" max="244800" min="1"/>
             <Limit name="bitrate" range="1-10000000"/>
             <Feature name="adaptive-playback"/>
-            <Limit name="concurrent-instances" max="32" />
+            <Limit name="concurrent-instances" max="6" />
         </MediaCodec>
         <MediaCodec name="OMX.rk.video_decoder.mjpeg" type="video/mjpeg">
             <Limit name="size" max="1920x1088" min="176x144"/>
@@ -145,7 +145,7 @@ Only the three quirks included above are recognized at this point:
             <Limit name="blocks-per-second" max="244800" min="1"/>
             <Limit name="bitrate" range="1-10000000"/>
             <Feature name="adaptive-playback"/>
-            <Limit name="concurrent-instances" max="32" />
+            <Limit name="concurrent-instances" max="6" />
         </MediaCodec>
 	<MediaCodec name="OMX.rk.video_decoder.hevc" type="video/hevc">
 	    <Limit name="size" max="4096x2160" min="176x144"/>
@@ -154,7 +154,7 @@ Only the three quirks included above are recognized at this point:
 	    <Limit name="blocks-per-second" max="244800" min="1"/>
 	    <Limit name="bitrate" range="1-10000000"/>
 	    <Feature name="adaptive-playback"/>
-	    <Limit name="concurrent-instances" max="32" />
+	    <Limit name="concurrent-instances" max="6" />
         </MediaCodec>
     </Decoders>
 
@@ -164,7 +164,7 @@ Only the three quirks included above are recognized at this point:
             <Limit name="alignment" value="16x8" />
             <Limit name="bitrate" range="1-40000000" />
             <Feature name="bitrate-modes" value="VBR,CBR" />
-	    <Limit name="concurrent-instances" max="32" />
+	    <Limit name="concurrent-instances" max="4" />
         </MediaCodec>
     </Encoders>
     <Include href="media_codecs_rk_vpu.xml" />
