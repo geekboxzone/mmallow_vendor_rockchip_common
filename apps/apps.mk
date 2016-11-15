@@ -16,7 +16,6 @@ endif
 
 ifneq ($(strip $(TARGET_BOARD_PLATFORM_PRODUCT)), vr)
 PRODUCT_PACKAGES += \
-    RkApkinstaller  \
     userExperienceService
 ifneq ($(strip $(TARGET_BOARD_PLATFORM)), sofia3gr)
 PRODUCT_PACKAGES += \
@@ -85,11 +84,8 @@ endif
 ###########for box app ################
 ifeq ($(strip $(TARGET_BOARD_PLATFORM_PRODUCT)), box)
 PRODUCT_PACKAGES += \
-    AllApp	\
     eHomeMediaCenter_box	\
-    ITVLauncher	\
-    RkMusic	\
-    Settings2
+    RkMusic
   ifeq ($(strip $(BOARD_USE_LOW_MEM256)), true)
         PRODUCT_PACKAGES += \
               SimpleLauncher
